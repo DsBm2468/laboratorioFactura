@@ -8,7 +8,7 @@
       $user = 'root';
       $pwd = '';
       $db = 'facturacion_tienda_db';
-      $conex = mysqli_connect($host, $user, $pwd, $db);
+      $conex = new mysqli($host, $user, $pwd, $db);
     }
 
     if($conex->connect_error){

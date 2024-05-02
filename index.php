@@ -16,10 +16,9 @@
              </div>
              <div>
                   <label>Contraseña: </label>
-                  <input name="pwd" required>
+                  <input type="password" name="pwd" required>
              </div>
              <button type=submit>Iniciar sesión</button>
-             <a herf="views/RegistroUsuario.php">Registrarse</a>
             </form> 
         </tbody>
         
