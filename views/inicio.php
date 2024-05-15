@@ -27,5 +27,6 @@ $controller->validarSesion();
     echo $_SESSION['iniciarSesion'];
     ?>
     <a href="cerrarSesion.php">Cerrar sesión</a>
+    <a href="crearcliente.php">Crear Cliente</a>
 </body>
 </html>
