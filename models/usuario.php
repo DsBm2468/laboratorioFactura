@@ -1,8 +1,33 @@
 <?php
+  namespace App\models;
+  
+  class Usuario{
+      protected $id;
+      protected $user;
+      protected $pwd;
 
-class Usuario extends Model{
-    protected $id=0;
-    protected $user = '';
-    protected $pwd = '';
-}
+      function getId(){
+          return $this->id;
+      }
+
+      function setId($value){
+          $this->id = $value;
+        }
+        
+      function getUsuario(){
+          return $this->usuario;
+        }
+      
+        function setUsuario($value){
+          $this->usuario = $value;
+        }
+        
+        function getPwd(){
+          return $this->pwd;
+        }
+        
+        function setPwd($value){
+          $this->pwd = $value;
+        }
+    }
 ?>

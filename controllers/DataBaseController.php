@@ -1,17 +1,30 @@
 <?php
-  namespace App\controllers;
+   namespace App\controllers;
 
-  use mysqli;
+   use mysqli;
 
-  class DataBaseController{
-      $host = 'localhost';
-      $user = 'root';
-      $pwd = '';
-      $db = 'facturacion_tienda_db';
-      $conex = new mysqli($host, $user, $pwd, $db);
+   class DataBaseController{
+      private $host = 'localhost';
+      private $user = 'root';
+      private $pwd = '';
+      private $db = 'facturacion_tienda_db';
+      private $conex;
+      
+      function __construct(){
+        $this->conex = new mysqli(
+            $this->host,
+            $this->user,
+            $this->pwd,
+            $this->db
+        );
+      }
+
+    function execSql($sql){// esta funcion ejecutar una sentencia sql en la base de datos (eso se hace con query)
+        return $this->conex->query($sql);
+     }
+
+    function close(){
+        $this->conex->close();
     }
-
-    if($conex->connect_error){
-        die('Error en la conexión db' . $conex->connect_error);
-    }
+  }
 ?>

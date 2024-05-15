@@ -9,18 +9,17 @@
       <h1>Generar Facturas</h1>
       <h2>Iniciar sesión</h2>
       <tbody>
-          <form action="InicioSesion.php" method="post">
+          <form action="views/InicioSesion.php" method="post">
               <div>
-                   <label>Usuario: </label>
+                   <label for="">Usuario: </label>
                    <input type="text" name="user" required>
              </div>
              <div>
-                  <label>Contraseña: </label>
+                  <label for="">Contraseña: </label>
                   <input type="password" name="pwd" required>
              </div>
              <button type=submit>Iniciar sesión</button>
             </form> 
         </tbody>
-        
     </body>
 </html>
