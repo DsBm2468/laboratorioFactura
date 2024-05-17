@@ -1,7 +1,7 @@
 <?php
-
-include '../controllers/UsuarioController.php';
+include '../controllers/DataBaseController.php';
 require '../models/Usuario.php';
+include '../controllers/UsuarioController.php';
 
 use app\models\Usuario;
 use app\controllers\UsuarioController;
