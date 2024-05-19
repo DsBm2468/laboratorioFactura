@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 
-  use app\models\Usuario;
+  use App\models\Usuario;
   use app\controllers\DataBaseController;
 
   class UsuarioController{
@@ -11,7 +11,7 @@ namespace app\controllers;
         $pwd1 = $usuario->getPwd();
         $dataBase =new dataBaseController();
           $sql = "SELECT * FROM usarios WHERE user = '$usr' AND pwd = '$pwd1'";  
-          $result = $dataBase->query($sql);
+          $result = $dataBase->execSql($sql);
           if($result->num_rows == 0){
             header('Location: ../index.php');
             return "NO SE INCIO SESION";
