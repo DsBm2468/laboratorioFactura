@@ -15,11 +15,11 @@ class ClienteController
             while($item = $result->fetch_assoc()){
                 $cliente = new Cliente();
                 $cliente->set('id', $item['id']);
-                $cliente->set('nombres', $item['nombres']);
-                $cliente->set('tipoDoc', $item['tipoDoc']);
-                $cliente->set('numDocumento', $item['numDocumento']);
-                $cliente->set('tel', $item['tel']);
+                $cliente->set('nombreCompleto', $item['nombreCompleto']);
+                $cliente->set('tipoDocumento', $item['tipoDocumento']);
+                $cliente->set('numeroDocumento', $item['numeroDocumento']);
                 $cliente->set('email', $item['email']);
+                $cliente->set('telefono', $item['telefono']);
                 $clientes[] = $cliente;
             }
 
@@ -28,15 +28,24 @@ class ClienteController
         return $clientes;
     }
 
-    function create($contacto)
+    function create($cliente)
     {
-        
+        $sql = "INSERT INTO clientes(nombreCompleto, tipoDocumento, numeroDocumento, email, telefono) VALUES (";
+        $sql .= "'".$cliente->get('nombreCompleto')."',";
+        $sql .= "'".$cliente->get('tipoDocumento')."',";
+        $sql .= "'".$cliente->get('numeroDocumento')."',";
+        $sql .= "'".$cliente->get('email')."',";
+        $sql .= "'".$cliente->get('telefono')."',";
+        $sql .= ")";
+        $dataBase = new DataBaseController();
+        $result = $dataBase->execSql($sql);
+        $dataBase->close();
+        return $result;
     }
- 
 
+    function update()
+    {
 
-
-
-
+    }
 }
 ?>

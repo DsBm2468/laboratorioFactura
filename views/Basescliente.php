@@ -14,8 +14,15 @@ if ($conn->connect_error) {
 
 $nombre= $_POST['nombres'];
 $tipoDocumento = $_POST['tipoDocumento'];
-$numDocumento = $_POST['numeDocumento'];
+$numeDocumento = $_POST['numeDocumento'];
 $telefono = $_POST['telefono'];
-$email
+$email = $_POST['email'];
+
+$sql = "INSERT INTO clientes (nombreCompleto, tipoDocumento, numeroDocumento, telefono, email)
+        values ('$nombre', '$tipoDocumento', '$numeDocumento', '$telefono', '$email')";
+
+
+        
+
 
 ?>
