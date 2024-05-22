@@ -1,17 +1,17 @@
 <?php
 namespace app\controllers;
 
-  use App\models\Usuario;
+  use app\models\Usuario;
   use app\controllers\DataBaseController;
 
   class UsuarioController{
     
       function validarUsuario($usuario){
-        $usr = $usuario->getUsuario();
-        $pwd1 = $usuario->getPwd();
+        $user = $usuario->getUsuario();
+        $pwd = $usuario->getPwd();
         $dataBase =new dataBaseController();
-          $sql = "SELECT * FROM usarios WHERE user = '$usr' AND pwd = '$pwd1'";  
-          $result = $dataBase->execSql($sql);
+          $sql = "SELECT * FROM usuarios WHERE usuario = '$user' AND pwd = '$pwd'";  
+          $result = $dataBase->ejecutarSql($sql);
           if($result->num_rows == 0){
             header('Location: ../index.php');
             return "NO SE INCIO SESION";

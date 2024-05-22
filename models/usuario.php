@@ -15,11 +15,11 @@
         }
         
       function getUsuario(){
-          return $this->usuario;
+          return $this->user;
         }
       
         function setUsuario($value){
-          $this->usuario = $value;
+          $this->user = $value;
         }
         
         function getPwd(){
