@@ -9,9 +9,10 @@ require '../models/Usuario.php';
 include '../controllers/UsuarioController.php';
 
 use app\controllers\UsuarioController;
+use App\models\Usuario;
 
 $controller = new UsuarioController();
-//$controller->validarUsuario();
+$usuario = new Usuario();
 ?>
 
 
@@ -48,7 +49,7 @@ $controller = new UsuarioController();
         </div>
         <div class="menu-secundario">
            <a href="" class="nav-link1">Lista de Clientes</a>
-           <a href="" class="nav-link1">Generar Factura</a>
+           <a href="productos.php" class="nav-link1">Generar Factura</a>
         </div>
     <div>
 
