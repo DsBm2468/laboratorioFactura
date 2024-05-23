@@ -9,9 +9,9 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Inicio</a>
+            <a href="inicio2.php" class="logo nav-link">Inicio</a>
             <ul class="nav-menu">
-             <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Clientes</a>
+             <li class="nav-menu-item"><a href="clientes.php" class="nav-menu-link nav-link">Clientes</a>
              </li>
              <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Productos</a>
              </li>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="menu-secundario">
-           <a href="" class="nav-link1">Lista de Clientes</a>
+           <a href="clientes.php" class="nav-link1">Lista de Clientes</a>
            <a href="" class="nav-link1">Generar Factura</a>
         </div>
     <div>
