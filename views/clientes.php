@@ -23,7 +23,7 @@ $clientes = $controller->read();
         <nav class="nav">
             <a href="clientes.php" class="logo nav-link">Clientes</a>
             <ul class="nav-menu">
-             <li class="nav-menu-item"><a href="inicio2.php" class="nav-menu-link nav-link">Inicio</a>
+             <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
              </li>
              <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Productos</a>
              </li>
@@ -36,7 +36,7 @@ $clientes = $controller->read();
 </header>
 <div class="contenido">
      <div class="articulos">
-            <div>
+            <div id="main-container">
                 <h1 class="texto1">Lista de Clientes</h1>
                 <table>
                     <thead>
@@ -49,6 +49,30 @@ $clientes = $controller->read();
                             <th>Editar</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?php if (!empty($clientes)) : ?>
+                         <?php foreach ($clientes as $item) : ?>
+                            <tr>
+                                <td><?php echo $item->get('tipoDocumento');  ?></td>
+                                <td><?php echo $item->get('numeroDocumento');?></td>
+                                <td><?php echo $item->get('nombreCompleto'); ?></td>
+                                <td><?php echo $item->get('email');          ?></td>
+                                <td><?php echo $item->get('telefono');       ?></td>
+                                <td><form action="editarcliente.php?id=<?php echo $item->get('id'); ?>" method="post">
+
+                                        <input type="submit" value="Editar">
+                                    </form></td>
+
+                            </tr>
+
+                         <?php endforeach; ?>  
+                         
+                        <?php else : ?>
+                            <tr>
+                                <td>No hay clientes D:</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
                 </table>
             </div>
       </div>

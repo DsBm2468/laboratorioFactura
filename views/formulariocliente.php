@@ -13,7 +13,7 @@
         <nav class="nav">
             <a href="formulariocliente.php" class="logo nav-link">Clientes</a>
             <ul class="nav-menu">
-                <li class="nav-menu-item"><a href="inicio2.php" class="nav-menu-link nav-link">Inicio</a>
+                <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>
                 <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Productos</a>
                 </li>
@@ -27,7 +27,7 @@
 
     <div class="contenido">
         <div class="articulos">
-            <div>
+            <div class="secciones">
                 <form action="Basescliente.php" class="form" id="form" method="post">
                     <div>
                         <p>Tipo de Documento</p>

@@ -48,7 +48,7 @@ $usuario = new Usuario();
             </div>
         </div>
         <div class="menu-secundario">
-           <a href="" class="nav-link1">Lista de Clientes</a>
+           <a href="clientes.php" class="nav-link1">Lista de Clientes</a>
            <a href="productos.php" class="nav-link1">Generar Factura</a>
         </div>
     <div>
