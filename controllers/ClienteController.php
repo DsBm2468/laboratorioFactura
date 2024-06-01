@@ -62,5 +62,38 @@ class ClienteController
         $dataBase->close();
         return $result;
     }
+
+    function clienteExistente($numeroDocumento)
+    {
+        $dataBase = new DataBaseController();
+        $conn = $dataBase->getConnection();
+        $query = $conn->prepare("SELECT COUNT(*) as count FROM clientes WHERE numeroDocumento = ?");
+        $query->bind_param("s", $numeroDocumento);
+        $query->execute();
+        $result = $query->get_result();
+        $row = $result->fetch_assoc();
+        return $row['count'] > 0;  
+    }
+
+    function idCliente($documento){
+        $dataBase = new DataBaseController();
+        $sql = "SELECT * FROM clientes WHERE numeroDocumento='".$documento."'";
+        $result = $dataBase->ejecutarSql($sql);
+        $clientes = [];
+        if($result->num_rows == 0){
+            return $clientes;
+        }
+        while ($item = $result->fetch_assoc()) {
+
+            $cliente = new Cliente();
+            $cliente->set('id', $item['id']);
+            array_push($clientes, $cliente);
+
+            $id=$cliente->get('id');
+            setcookie('clienteId',$id, time() + (86400 * 30), "/");
+        }
+        $dataBase->close();
+        return $clientes;
+    }
 }
 ?>
