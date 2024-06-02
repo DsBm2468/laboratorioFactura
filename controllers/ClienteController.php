@@ -9,7 +9,7 @@ class ClienteController
     {
         $dataBase = new DataBaseController();
         $sql = "select * from clientes";
-        $result = $dataBase->execSql($sql);
+        $result = $dataBase->ejecutarSql($sql);
         $clientes = [];
         if($result->num_rows == 0) {
             while($item = $result->fetch_assoc()){
@@ -38,7 +38,7 @@ class ClienteController
         $sql .= "'".$cliente->get('telefono')."',";
         $sql .= ")";
         $dataBase = new DataBaseController();
-        $result = $dataBase->execSql($sql);
+        $result = $dataBase->ejecutarSql($sql);
         $dataBase->close();
         return $result;
     }

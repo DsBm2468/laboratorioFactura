@@ -1,4 +1,8 @@
 <?php
+require '../models/Factura.php';
+require '../controllers/ClienteController.php';
+include '../models/Model.php';
+//include '../controllers/ClienteController.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,28 +15,11 @@
 <body>
     <h1>Crear nueva factura</h1>
     <section>
-        <label>Articulo(s): </label>
-        <select name="artSelect" id="artSelect">
-            <option value="0">...</option>
-            <option value="1">Maleta deportiva</option>
-            <option value="2">Colchoneta profesional</option>
-            <option value="3">Bandas elasticas</option>
-            <option value="4">Casco para bicicleta</option>
-            <option value="5">Barra multifuncional</option>
-            <option value="6">Lazo para ejercicio</option>
-            <option value="7">Gorra deportiva</option>
-            <option value="8">Botella de agua deportiva</option>
-            <option value="9">Kit de entrenamiento</option>
-            <option value="10">Canguro riñonera</option>
-            <option value="11">Guantes de entrenamiento</option>
-            <option value="12">Rueda abdominales</option>
-            <option value="13">BAnco de pesas</option>
-        </select>
-        <div>
-            <label>¿Cuántos de estos artículos deseas llevar?  </label>
-            <input type="number" min="1" required>
-        </div>
-        <button id="agregar">Agregar articulo(s) a la lista</button>
+       <label>Seleccione al cliente: </label>
+       <input>
+        <label>Valor total productos: </label>
+        <input name="totalProduct" type="money_format" id="totalProduct">
+        <button href="facturaFinal.php">Mostrar factura</button>
     </section>
 </body>
 </html>
