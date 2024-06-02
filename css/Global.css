@@ -84,6 +84,7 @@ footer{
 /* tabla */
 
 .main-container{
+    margin: 150px auto;
     width: 600px;
 }
 
@@ -91,7 +92,7 @@ table{
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    background-color: rgb(134, 118, 118);
+    background-color: white;
     
 }
 
@@ -100,7 +101,7 @@ th, td {
 }
 
 thead{
-    background-color: #246355;
+    background-color: #1b2a34;
     border-bottom: solid 5px  #0F362D;
     color: white;
 }
@@ -110,7 +111,7 @@ tr:nth-child(even){
 }
 
 tr:hover td{
-    background-color: #369681;
+    background-color: #142027;
     color: white;
 
 }

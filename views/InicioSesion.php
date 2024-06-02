@@ -25,7 +25,7 @@ $iniciarSesion = $controlador->validarUsuario($usuario);
     if($iniciarSesion){
           session_start();
           $_SESSION['iniciarSesion']=true;
-          header('Location: inicio.php');
+          header('Location: ../views/inicio.php');
     } else {
           echo '<h1>Debes ingresar usuario y contraseña</h1>';
           echo '<br>';

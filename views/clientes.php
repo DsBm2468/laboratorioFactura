@@ -16,7 +16,7 @@ $clientes = $controller->read();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Global.css">
+    <link rel="stylesheet" href="http://localhost/laboratorioFactura/css/Global.css">
     <title>Clientes</title>
 </head>
 
@@ -43,7 +43,7 @@ $clientes = $controller->read();
                     <th>Tipo de Documento</th>
                     <th>Numero De Documento</th>
                     <th>Email</th>
-                    <th>telefono</th>
+                    <th>Telefono</th>
                     <th>Editar</th>
                 </tr>
             </thead>
