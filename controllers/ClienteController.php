@@ -10,11 +10,7 @@ class ClienteController
     function read()
     {
         $dataBase = new DataBaseController();
-<<<<<<< HEAD
-        $sql = "select * from clientes";
-=======
         $sql = "SELECT * FROM clientes";
->>>>>>> d044ecc53e78aa383f6f6b8ee3ecd73895cbd93d
         $result = $dataBase->ejecutarSql($sql);
         $clientes = [];
         if($result->num_rows == 0) {

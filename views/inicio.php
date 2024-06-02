@@ -40,6 +40,11 @@ $usuario = new Usuario();
             <div>
                 <h1 class="texto1">Bienvenido(a) Señor(a) Usuario(a)</h1>
             </div>
+            <div class="menu-secundario">
+                <a href="clientes.php" class="nav-link1">Lista de Clientes</a>
+                <a href="productos.php" class="nav-link1">Generar Factura</a>
+            </div>
+    <div>
 </body>
 </html>
 
