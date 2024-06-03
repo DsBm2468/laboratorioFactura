@@ -22,40 +22,34 @@
             </ul>
         </nav>
     </header>
-            <div class="">
-                <form action="validarcliente.php" class="form" id="form" method="post">
-                    <div>
-                        <p>Tipo de Documento</p>
-                        <select class="" id="tipoDocumento" name="tipoDocumento" required>
-                            <option value="">Seleccione</option>
-                            <option value="CC">Cedula</option>
-                            <option value="CE">Cedula de extranjeria</option>
-                            <option value="NIT">Número de Identificación Tributaria</option>
-                            <option value="TI">Tarjeta de Identidad</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p>Nombres Y Apellidos</p>
-                        <input type="nombre" id="nombreCompleto" name="nombreCompleto" placeholder="Nombres Y Apellidos" class="" required>
-                    </div>
-                    <div>
-                        <p>Numero de Documento</p>
-                        <input type="number" id="numeroDocumento" name="numeroDocumento" placeholder="# Documento" class="" required>
-                    </div>
-                    <div>
-                        <p>Email:</p>
-                        <input type="email" id="email" name="email" placeholder="Email" class="" required>
-                    </div>
-                    <div>
-                        <p>Telefono:</p>
-                        <input type="telefono" id="telefono" name="telefono" placeholder="Telefono" class="" required>
-                    </div>
-                    <p class="">
-                        <input type="submit" class="" value="Agregar Cliente">
-                    </p>
-                </form>
+    <section class="form-cliente">
+        <form action="validarcliente.php" class="form" id="form" method="post">
+            <h4>Formulario Cliente</h4>
+            <select class="controls" id="tipoDocumento" name="tipoDocumento" placeholder="Tipo de Documento" required>
+                <option value="">Seleccione</option>
+                <option value="CC">Cedula</option>
+                <option value="CE">Cedula de extranjeria</option>
+                <option value="NIT">Número de Identificación Tributaria</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="Otro">Otro</option>
+            </select>
             </div>
+            <div>
+                <input type="nombre" id="nombreCompleto" name="nombreCompleto" placeholder="Nombres Y Apellidos" class="controls" required>
+            </div>
+            <div>
+                <input type="number" id="numeroDocumento" name="numeroDocumento" placeholder="Numero Documento" class="controls" required>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email" class="controls" required>
+            </div>
+            <div>
+                <input type="telefono" id="telefono" name="telefono" placeholder="Telefono" class="controls" required>
+            </div>
+            <input type="submit" class="botons" value="Agregar Cliente">
+            </p>
+        </form>
+    </section>
 </body>
 
 </html>

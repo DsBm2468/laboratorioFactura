@@ -75,6 +75,9 @@ $clientes = $controller->read();
             </tbody>
         </table>
     </div>
+    <br>
+    <a href="cerrarSesion.php" class="">Cerrar Sesión</a>
+    <br>
 </body>
 
 </html>

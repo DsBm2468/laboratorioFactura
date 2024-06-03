@@ -10,11 +10,7 @@ class ClienteController
     function read()
     {
         $dataBase = new DataBaseController();
-<<<<<<< HEAD
-        $sql = "select * from clientes";
-=======
         $sql = "SELECT * FROM clientes";
->>>>>>> d044ecc53e78aa383f6f6b8ee3ecd73895cbd93d
         $result = $dataBase->ejecutarSql($sql);
         $clientes = [];
         if($result->num_rows == 0) {
@@ -52,7 +48,7 @@ class ClienteController
         return $result;
     }
 
-    function update($cliente)
+     public function update($cliente)
     {
         $sql = "UPDATE clientes SET";
         $sql .= "nombreCompleto='" . $cliente->get('nombreCompleto') . "',";
@@ -61,13 +57,14 @@ class ClienteController
         $sql .= "email ='" . $cliente->get('email') . "',";
         $sql .= "telefono ='" . $cliente->get('telefono') . "' ";
         $sql .= "WHERE id = " . $cliente->get('id');
+
         $dataBase = new DataBaseController();
         $result = $dataBase->ejecutarSql($sql);
         $dataBase->close();
+        
         return $result;
     }
-
-    function clienteExistente($numeroDocumento)
+     public function clienteExistente($numeroDocumento)
     {
         $dataBase = new DataBaseController();
         $conn = $dataBase->getConnection();

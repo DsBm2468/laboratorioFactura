@@ -1,4 +1,3 @@
-
 /* Maquetación XD */
 
 * {
@@ -12,18 +11,18 @@ body {
 }
 
 .header {
-    background-color:#1b2a34;
+    background-color: #1b2a34;
     height: 80px;
     position: fixed;
     width: 100%;
-    top:  0;
+    top: 0;
     left: 0;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
-    
+
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -58,20 +57,20 @@ body {
     text-transform: uppercase;
 }
 
-.nav-menu-link{
+.nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
 }
 
 .nav-menu-link:hover {
-    background-color:#142027;
+    background-color: #142027;
     transition: 0.5s;
 }
 
-footer{
+footer {
     width: 100%;
-    height:  200px;
-    background-color:#1b2a34;
+    height: 200px;
+    background-color: #1b2a34;
     color: white;
     margin-top: 40px;
 
@@ -83,39 +82,88 @@ footer{
 
 /* tabla */
 
-.main-container{
+.main-container {
     margin: 150px auto;
     width: 600px;
 }
 
-table{
+table {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
     background-color: white;
-    
+
 }
 
-th, td {
+th,
+td {
     padding: 20px;
 }
 
-thead{
+thead {
     background-color: #1b2a34;
-    border-bottom: solid 5px  #0F362D;
+    border-bottom: solid 5px #0F362D;
     color: white;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: #ddd;
 }
 
-tr:hover td{
+tr:hover td {
     background-color: #142027;
     color: white;
 
 }
 
+/* Formulario */
+.form-cliente {
+    width: 400px;
+    background: #1b2a34;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
 
+.form-cliente h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 
+.controls {
+    width: 100%;
+    background: #1b2a34;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+}
 
+.form-cliente p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-cliente a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+.form-cliente .botons {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
