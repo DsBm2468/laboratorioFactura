@@ -1,7 +1,7 @@
 <?php
 namespace App\models;
 
-class Factura extends Model {
+class Factura /*extends Model*/ {
     protected $referencia = 0;
     protected $fecha = "";
     protected $idCliente = 0;

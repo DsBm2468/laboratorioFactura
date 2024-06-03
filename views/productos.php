@@ -14,9 +14,26 @@ include '../models/Model.php';
 </head>
 <body>
     <h1>Crear nueva factura</h1>
-    <section>
+    <section name="selectcliente">
        <label>Seleccione al cliente: </label>
-       <input>
+       <select>
+          <?php
+              $getClientes1 = "select * from cliente order by id";
+              $getClientes2 = mysqli_query($getClientes1);
+              while($row = mysqli_fetch_array($getClientes2)){
+                  $nombreCompleto = $row['nombre'];
+                  $tipoDocumento = $row['tipodoc'];
+                  $numeroDocumento = $row['numdoc'];
+                  $email = $row['email'];
+
+                  ?>
+                  <option value="<?php echo $id; ?>"
+                      <?php echo $nombreCompleto; ?>>
+                    </option>
+                  <?php
+                }
+            ?>
+       </select>
         <label>Valor total productos: </label>
         <input name="totalProduct" type="money_format" id="totalProduct">
         <button href="facturaFinal.php">Mostrar factura</button>
