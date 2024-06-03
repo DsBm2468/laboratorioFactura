@@ -41,7 +41,7 @@ if ($id) {
 <body>
     <h1><?php echo $mensaje; ?></h1>
     <br>
-    <a href="clientes.php">Volver</a>
+    <a href="clientes.php" class="nav-link1">Volver</a>
     <br>
     <a href="inicio.php">Inicio</a>
 </body>

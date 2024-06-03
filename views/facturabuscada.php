@@ -7,35 +7,40 @@ include '../controllers/FacturaController.php';
 include '../models/Factura.php';
 
 use App\controllers\ClienteController;
+use App\models\Cliente;
 use App\controllers\FacturaController;
 
-
 $controller = new ClienteController();
+$cliente = new Cliente();
+
+$cliente->set('numeroDocumento', $_POST['numeroDocumento']);
+
+$id = $controller->idCliente($cliente->get('numeroDocumento'));
+
+if ($id) {
+    $mensajeid = '';
+}
 $clientes = $controller->mostrarFactuCliente();
 
-$controller = new FacturaController;
-$factura = $controller->mostrarDatosFactu();
-
+$controller = new FacturaController();
+$factura = $controller->mostrarFacturasCliente();
 ?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Global.css">
-    <title>Facturas</title>
+    <title>Facturas Generadas</title>
 </head>
 
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Facturas Generadas</a>
+            <a href="CrearFactura.php" class="logo nav-link">Crear Factura</a>
             <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
-                </li>
-                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
                 </li>
                 <li class="nav-menu-item"><a href="clientes.php" class="nav-menu-link nav-link">Clientes</a>
                 </li>
@@ -77,6 +82,9 @@ $factura = $controller->mostrarDatosFactu();
             <p>No hay clientes registrados</p>
         <?php endif ?>
     </div>
+    <a href="inicio.php" class="nav-link1">Volver</a>
+
+
 </body>
 
 </html>

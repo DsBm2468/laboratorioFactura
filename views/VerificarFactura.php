@@ -25,8 +25,9 @@ $result = $controller->crear($factura);
 <body>
     <h1><?php echo $result ? 'Factura creada' : 'No se pudo crear la factura'; ?></h1>
     <br>
-    <a href="facturaFinal.php">Ver Factura</a>
-    <a href="inicio.php">Inicio</a>
+    <a href="facturas.php" class="nav-link1">Ver Factura</a>
+    <br>
+    <a href="inicio.php" class="nav-link1">Inicio</a>
 
 </body>
 

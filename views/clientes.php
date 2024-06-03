@@ -25,11 +25,11 @@ $clientes = $controller->read();
         <nav class="nav">
             <a href="clientes.php" class="logo nav-link">Clientes</a>
             <ul class="nav-menu">
-                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
-                </li>
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Facturas</a>
+                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
+                </li>
+                <li class="nav-menu-item"><a href="buscarfactura.php" class="nav-menu-link nav-link">Facturas</a>
                 </li>
                 <li class="nav-menu-item"><a href="cerrarSesion.php" class="nav-menu-link nav-link">Cerrar Sesión</a>
                 </li>

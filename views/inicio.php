@@ -34,7 +34,7 @@ $usuario = new Usuario();
                 </li>
                 <li class="nav-menu-item"><a href="clientes.php" class="nav-menu-link nav-link">Clientes</a>
                 </li>
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Facturas</a>
+                <li class="nav-menu-item"><a href="buscarfactura.php" class="nav-menu-link nav-link">Facturas</a>
                 </li>
                 <li class="nav-menu-item"><a href="cerrarSesion.php" class="nav-menu-link nav-link">Cerrar Sesión</a>
                 </li>
@@ -51,7 +51,7 @@ $usuario = new Usuario();
         </div>
         <div class="menu-secundario">
             <a href="clientes.php" class="nav-link1">Consultar Clientes</a>
-            <a href="productos.php" class="nav-link1">Consultar Facturas</a>
+            <a href="buscarfactura.php" class="nav-link1">Consultar Facturas</a>
             <a href="" class="nav-link1">Ponganos 5.0 Profe :D</a>
         </div>
 </body>

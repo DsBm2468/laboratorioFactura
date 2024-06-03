@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Global.css">
-    <title>Generar Factura</title>
+    <title>Buscar Facturas</title>
 </head>
 
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="CrearFactura.php" class="logo nav-link">Crear Factura</a>
+            <a href="#" class="logo nav-link">Buscar Facturas</a>
             <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
                 </li>
                 <li class="nav-menu-item"><a href="clientes.php" class="nav-menu-link nav-link">Clientes</a>
                 </li>
@@ -22,20 +24,12 @@
             </ul>
         </nav>
     </header>
-    <div>
-        <section class="form-cliente">
-            <form action="verificarFactura.php" method="post">
-                <div>
-                    <h4>Valor de La Factura</h4>
-                    <input class="controls" type="number" name="valorFactura" min=100 placeholder="Ingrese el valor total de su factura" required>
-                </div>
-                <div>
-                    <input type="submit" class="botons" value="Guardar Total">
-                </div>
-            </form>
-        </section>
-    </div>
-
 </body>
-
+<section class="form-cliente">
+    <form action="facturabuscada.php" class="form" id="form" method="post">
+        <h4>Buscar Factura</h4>
+        <div>
+            <input class="controls" type="text"  name="numeroDocumento" placeholder=" Ingrese su Numero de Documento"  required>
+        </div>
+        <input type="submit" class="botons" value="Buscar Factura">
 </html>

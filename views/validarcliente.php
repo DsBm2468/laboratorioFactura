@@ -47,10 +47,10 @@ if ($clienteExistente){
 <body>
     <h1><?php echo $mensaje; ?></h1>
     <br>
-    <a href="crearFactura.php">Crear Factura</a>
+    <a href="crearFactura.php" class="nav-link1">Crear Factura</a>
     <br>
-    <a href="clientes.php">Consultar Clientes</a>
+    <a href="clientes.php" class="nav-link1">Consultar Clientes</a>
     <br>
-    <a href="inicio.php">Inicio</a>
+    <a href="inicio.php"  class="nav-link1">Inicio</a>
 </body>
 </html>

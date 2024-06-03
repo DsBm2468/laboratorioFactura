@@ -15,7 +15,7 @@
             <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>
-                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Facturas</a>
+                <li class="nav-menu-item"><a href="buscarfacturas.php" class="nav-menu-link nav-link">Facturas</a>
                 </li>
                 <li class="nav-menu-item"><a href="cerrarSesion.php" class="nav-menu-link nav-link">Cerrar Sesión</a>
                 </li>
