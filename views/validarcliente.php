@@ -26,6 +26,8 @@ if($id){
 if ($clienteExistente){
     $result = false;
     $mensaje = 'El Cliente ya fue registrado';
+
+    
 }else{
     $result = empty($cliente->get('id'))
         ? $controller->create($cliente)
@@ -45,7 +47,9 @@ if ($clienteExistente){
 <body>
     <h1><?php echo $mensaje; ?></h1>
     <br>
-    <a href="clientes.php">Volver</a>
+    <a href="crearFactura2.php">Crear Factura</a>
+    <br>
+    <a href="clientes.php">Consultar Clientes</a>
     <br>
     <a href="inicio.php">Inicio</a>
 </body>

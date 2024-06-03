@@ -29,7 +29,6 @@ class DataBaseController
 
   function execSql($sql)
   { // esta funcion ejecutar una sentencia sql en la base de datos (eso se hace con query)
-
     return $this->conex->query($sql);
   }
 

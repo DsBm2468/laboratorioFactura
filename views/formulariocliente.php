@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="formulariocliente.php" class="logo nav-link">Clientes</a>
+            <a href="formulariocliente.php" class="logo nav-link">Crear Cliente</a>
             <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>

@@ -30,6 +30,8 @@ $usuario = new Usuario();
         <nav class="nav">
             <a href="#" class="logo nav-link">Inicio</a>
             <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
+                </li>
                 <li class="nav-menu-item"><a href="clientes.php" class="nav-menu-link nav-link">Clientes</a>
                 </li>
                 <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Facturas</a>
@@ -48,9 +50,9 @@ $usuario = new Usuario();
             </div>
         </div>
         <div class="menu-secundario">
-            <a href="formulariocliente.php" class="nav-link1">Nuevo Cliente</a>
-            <a href="productos.php" class="nav-link1">Generar Factura</a>
-            <a href="" class="nav-link1">Facturas Creadas</a>
+            <a href="clientes.php" class="nav-link1">Consultar Clientes</a>
+            <a href="productos.php" class="nav-link1">Consultar Facturas</a>
+            <a href="" class="nav-link1">Ponganos 5.0 Profe :D</a>
         </div>
 </body>
 
