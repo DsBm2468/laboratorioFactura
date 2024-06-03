@@ -26,7 +26,7 @@
     </header>
 </body>
 <section class="form-cliente">
-    <form action="facturabuscada.php" class="form" id="form" method="post">
+    <form action="facturabuscada.php" class="form" method="post">
         <h4>Buscar Factura</h4>
         <div>
             <input class="controls" type="text"  name="numeroDocumento" placeholder=" Ingrese su Numero de Documento"  required>

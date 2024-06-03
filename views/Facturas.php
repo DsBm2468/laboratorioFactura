@@ -44,11 +44,12 @@ $factura = $controller->mostrarDatosFactu();
             </ul>
         </nav>
     </header>
-    <div>
-        <h2>Cliente</h2>
+    <section class="factura-conteiner">
+        <h4>Datos del Cliente</h4>
+        <hr>
         <?php if (!empty($clientes)) : ?>
             <?php foreach ($clientes as $item) : ?>
-                <div>
+                <div class="parrafo">
                     <p>Tipo de Documento : <?php echo $item->get('tipoDocumento'); ?></p>
                     <p>Número de Documento : <?php echo $item->get('numeroDocumento'); ?></p>
                     <p>Nombre Completo : <?php echo $item->get('nombreCompleto'); ?></p>
@@ -59,13 +60,14 @@ $factura = $controller->mostrarDatosFactu();
         <?php else : ?>
             <p>No hay clientes registrados</p>
         <?php endif ?>
-    </div>
+    </section>
 
-    <div>
-        <h2>Facturas</h2>
+    <section class="factura-conteiner">
+        <h4>Facturas</h4>
+        <hr>
         <?php if (!empty($factura)) : ?>
             <?php foreach ($factura as $item) : ?>
-                <div>
+                <div class="parrafo">
                     <p>$referencia : <?php echo $item->get('refencia'); ?></p>
                     <p>Fecha : <?php echo $item->get('fecha'); ?></p>
                     <p>Id Cliente : <?php echo $item->get('idCliente'); ?></p>
@@ -76,7 +78,7 @@ $factura = $controller->mostrarDatosFactu();
         <?php else : ?>
             <p>No hay clientes registrados</p>
         <?php endif ?>
-    </div>
+    </section>
 </body>
 
 </html>

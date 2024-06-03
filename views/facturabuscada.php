@@ -8,11 +8,9 @@ include '../models/Factura.php';
 
 use App\controllers\ClienteController;
 use App\models\Cliente;
-use App\controllers\FacturaController;
 
 $controller = new ClienteController();
 $cliente = new Cliente();
-
 $cliente->set('numeroDocumento', $_POST['numeroDocumento']);
 
 $id = $controller->idCliente($cliente->get('numeroDocumento'));
@@ -22,11 +20,13 @@ if ($id) {
 }
 $clientes = $controller->mostrarFactuCliente();
 
+use App\controllers\FacturaController;
+
 $controller = new FacturaController();
 $factura = $controller->mostrarFacturasCliente();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -49,11 +49,12 @@ $factura = $controller->mostrarFacturasCliente();
             </ul>
         </nav>
     </header>
-    <div>
-        <h2>Cliente</h2>
+    <section class="factura-conteiner">
+        <h4>Datos del Cliente</h4>
+        <hr>
         <?php if (!empty($clientes)) : ?>
             <?php foreach ($clientes as $item) : ?>
-                <div>
+                <div class="parrafo">
                     <p>Tipo de Documento : <?php echo $item->get('tipoDocumento'); ?></p>
                     <p>Número de Documento : <?php echo $item->get('numeroDocumento'); ?></p>
                     <p>Nombre Completo : <?php echo $item->get('nombreCompleto'); ?></p>
@@ -64,27 +65,27 @@ $factura = $controller->mostrarFacturasCliente();
         <?php else : ?>
             <p>No hay clientes registrados</p>
         <?php endif ?>
-    </div>
-
-    <div>
-        <h2>Facturas</h2>
+    </section>
+    <section class="factura-conteiner">
+        <h4>Facturas</h4>
+        <hr>
         <?php if (!empty($factura)) : ?>
             <?php foreach ($factura as $item) : ?>
-                <div>
+                <div class="parrafo">
+                    <br>
                     <p>$referencia : <?php echo $item->get('refencia'); ?></p>
                     <p>Fecha : <?php echo $item->get('fecha'); ?></p>
                     <p>Id Cliente : <?php echo $item->get('idCliente'); ?></p>
                     <p>Descuento : <?php echo $item->get('descuento'); ?>%</p>
                     <p>Total Factura : <?php echo  number_format($item->get('valorFactura')); ?></p>
+                    <br>
                 </div>
             <?php endforeach; ?>
         <?php else : ?>
             <p>No hay clientes registrados</p>
         <?php endif ?>
-    </div>
+    </section>
     <a href="inicio.php" class="nav-link1">Volver</a>
-
-
 </body>
 
 </html>
