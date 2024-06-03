@@ -25,6 +25,8 @@ $clientes = $controller->read();
         <nav class="nav">
             <a href="clientes.php" class="logo nav-link">Clientes</a>
             <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="formulariocliente.php" class="nav-menu-link nav-link">Nueva Compra</a>
+                </li>
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>
                 <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Facturas</a>
@@ -75,9 +77,6 @@ $clientes = $controller->read();
             </tbody>
         </table>
     </div>
-    <br>
-    <a href="formulariocliente.php" class="nav-link1">Agregar Nuevo Cliente</a>
-    <br>
 </body>
 
 </html>

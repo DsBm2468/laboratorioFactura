@@ -41,22 +41,22 @@ class FacturaController
         $fecharef = date("ymd-His");
         $referencia = $fecharef . "-" . $id;
 
-            setcookie('refact', $referencia, time() + (86400 * 30), "/");
+        setcookie('reFact', $referencia, time() + (86400 * 30), "/");
 
-        $total=$factura->get('valorFactura');
-        if ($total>100000 && $total<=650000) {
-            $porcentajeDescuento=5;
-            $descuento=$porcentajeDescuento/100;
-            $monto=$total*$descuento;
-            $valorFactura=$total-$monto;
-        } else if($total>650000) {
-            $porcentajeDescuento=10;
-            $descuento=$porcentajeDescuento/100;
-            $monto=$total*$descuento;
-            $valorFactura=$total-$monto;
+        $total = $factura->get('valorFactura');
+        if ($total > 100000 && $total <= 650000) {
+            $porcentajeDescuento = 5;
+            $descuento = $porcentajeDescuento / 100;
+            $monto = $total * $descuento;
+            $valorFactura = $total - $monto;
+        } else if ($total > 650000) {
+            $porcentajeDescuento = 10;
+            $descuento = $porcentajeDescuento / 100;
+            $monto = $total * $descuento;
+            $valorFactura = $total - $monto;
         } else {
-            $porcentajeDescuento=0;
-            $valorFactura=$total;
+            $porcentajeDescuento = 0;
+            $valorFactura = $total;
         }
 
         $sql = "INSERT INTO facturas (refencia, fecha, idCliente, descuento, valorFactura) VALUES (";
@@ -82,6 +82,33 @@ class FacturaController
             $id = $_COOKIE['clienteId'];
         }
         $sql = "SELECT * FROM facturas WHERE idCliente='" . $id . "'";
+        $result = $dataBase->execSql($sql);
+        $facturas = [];
+        if ($result->num_rows == 0) {
+            return $facturas;
+        }
+        while ($item = $result->fetch_assoc()) {
+            $factura = new Factura();
+            $factura->set('refencia', $item['refencia']);
+            $factura->set('fecha', $item['fecha']);
+            $factura->set('idCliente', $item['idCliente']);
+            $factura->set('descuento', $item['descuento']);
+            $factura->set('valorFactura', $item['valorFactura']);
+            array_push($facturas, $factura);
+        }
+        $dataBase->close();
+        return $facturas;
+    }
+    function mostrarDatosFactu()
+    {
+        $dataBase = new DataBaseController();
+        if (isset($_COOKIE['clienteId'])) {
+            $id = $_COOKIE['clienteId'];
+        }
+        if (isset($_COOKIE['reFact'])) {
+            $reFact = $_COOKIE['reFact'];
+        }
+        $sql = "SELECT * FROM facturas WHERE idCliente ='" . $id . "' AND refencia='".$reFact."'";
         $result = $dataBase->execSql($sql);
         $facturas = [];
         if ($result->num_rows == 0) {

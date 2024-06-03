@@ -28,7 +28,7 @@ echo "ID recibido del formulario: " . $_GET['id'];
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Editar Cliente</a>
+            <a href="editarcliente.php" class="logo nav-link">Editar Cliente</a>
             <ul class="nav-menu">
                 <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
                 </li>

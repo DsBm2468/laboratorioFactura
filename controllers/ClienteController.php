@@ -96,4 +96,31 @@ class ClienteController
         $dataBase->close();
         return $clientes;
     }
+
+    function mostrarFactuCliente()
+    {
+        $dataBase = new DataBaseController;
+        if (isset($_COOKIE['clienteId'])) {
+            $id = $_COOKIE['clienteId'];
+        }
+        $sql = "SELECT * FROM clientes WHERE id = '" . $id . "'";
+        $result = $dataBase->execSql($sql);
+        $clientes = [];
+        if ($result->num_rows == 0) {
+            return $clientes;
+        }
+        while ($item = $result->fetch_assoc()) {
+
+            $cliente = new Cliente();
+            $cliente->set('id', $item['id']);
+            $cliente->set('nombreCompleto', $item['nombreCompleto']);
+            $cliente->set('tipoDocumento', $item['tipoDocumento']);
+            $cliente->set('numeroDocumento', $item['numeroDocumento']);
+            $cliente->set('email', $item['email']);
+            $cliente->set('telefono', $item['telefono']);
+            array_push($clientes, $cliente);
+        }
+        $dataBase->close();
+        return $clientes;
+    }
 }

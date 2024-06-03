@@ -25,7 +25,7 @@ if($id){
 }
 if ($clienteExistente){
     $result = false;
-    $mensaje = 'El Cliente ya fue registrado';
+    $mensaje = 'El Cliente ya está registrado';
 
     
 }else{
@@ -47,7 +47,7 @@ if ($clienteExistente){
 <body>
     <h1><?php echo $mensaje; ?></h1>
     <br>
-    <a href="crearFactura2.php">Crear Factura</a>
+    <a href="crearFactura.php">Crear Factura</a>
     <br>
     <a href="clientes.php">Consultar Clientes</a>
     <br>

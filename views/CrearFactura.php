@@ -1,42 +1,41 @@
-<?php
-require '../models/Factura.php';
-require '../controllers/ClienteController.php';
-include '../models/Model.php';
-//include '../controllers/ClienteController.php';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Global.css">
     <title>Generar Factura</title>
 </head>
-<body>
-    <h1>Crear nueva factura</h1>
-    <section name="selectcliente">
-       <label>Seleccione al cliente: </label>
-       <select>
-          <?php
-              $getClientes1 = "select * from cliente order by id";
-              $getClientes2 = mysqli_query($getClientes1);
-              while($row = mysqli_fetch_array($getClientes2)){
-                  $nombreCompleto = $row['nombre'];
-                  $tipoDocumento = $row['tipodoc'];
-                  $numeroDocumento = $row['numdoc'];
-                  $email = $row['email'];
 
-                  ?>
-                  <option value="<?php echo $id; ?>"
-                      <?php echo $nombreCompleto; ?>>
-                    </option>
-                  <?php
-                }
-            ?>
-       </select>
-        <label>Valor total productos: </label>
-        <input name="totalProduct" type="money_format" id="totalProduct">
-        <button href="facturaFinal.php">Mostrar factura</button>
-    </section>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="CrearFactura.php" class="logo nav-link">Crear Factura</a>
+            <ul class="nav-menu">
+                <li class="nav-menu-item"><a href="inicio.php" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link">Clientes</a>
+                </li>
+                <li class="nav-menu-item"><a href="cerrarSesion.php" class="nav-menu-link nav-link">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <section class="form-cliente">
+            <form action="verificarFactura.php" method="post">
+                <div>
+                    <h4>Valor de La Factura</h4>
+                    <input class="controls" type="number" name="valorFactura" min=100 placeholder="Ingrese el valor total de su factura" required>
+                </div>
+                <div>
+                    <input type="submit" class="botons" value="Guardar Total">
+                </div>
+            </form>
+        </section>
+    </div>
+
 </body>
+
 </html>
