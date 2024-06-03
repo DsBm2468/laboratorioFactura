@@ -1,12 +1,13 @@
 <?php
 namespace App\models;
 
-class Factura /*extends Model*/ {
-    protected $referencia = 0;
-    protected $fecha = "";
+class Factura extends Model {
+
+    protected $referencia = '';
+    protected $fecha = '';
     protected $idCliente = 0;
-    protected $estado = "";
-    protected $descuento = "";
+    protected $descuento = '';
+    protected $valorFactura = 0;
 }
 
 ?>

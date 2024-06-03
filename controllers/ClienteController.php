@@ -5,29 +5,28 @@ namespace App\controllers;
 use App\models\Cliente;
 use App\controllers\DataBaseController;
 
-class ClienteController 
+class ClienteController
 {
     function read()
     {
         $dataBase = new DataBaseController();
         $sql = "SELECT * FROM clientes";
-        $result = $dataBase->ejecutarSql($sql);
+        $result = $dataBase->execSql($sql);
         $clientes = [];
-        if($result->num_rows == 0) {
+        if ($result->num_rows == 0) {
             return $clientes;
         }
-        while($item = $result->fetch_assoc()){
-            
-                $cliente = new Cliente();
-                $cliente->set('id', $item['id']);
-                $cliente->set('nombreCompleto', $item['nombreCompleto']);
-                $cliente->set('tipoDocumento', $item['tipoDocumento']);
-                $cliente->set('numeroDocumento', $item['numeroDocumento']);
-                $cliente->set('email', $item['email']);
-                $cliente->set('telefono', $item['telefono']);
-                array_push($clientes, $cliente);
-                
-            }
+        while ($item = $result->fetch_assoc()) {
+
+            $cliente = new Cliente();
+            $cliente->set('id', $item['id']);
+            $cliente->set('nombreCompleto', $item['nombreCompleto']);
+            $cliente->set('tipoDocumento', $item['tipoDocumento']);
+            $cliente->set('numeroDocumento', $item['numeroDocumento']);
+            $cliente->set('email', $item['email']);
+            $cliente->set('telefono', $item['telefono']);
+            array_push($clientes, $cliente);
+        }
         $dataBase->close();
         return $clientes;
     }
@@ -36,19 +35,19 @@ class ClienteController
     {
         $sql = "INSERT INTO clientes(nombreCompleto, tipoDocumento, numeroDocumento, email, telefono) VALUES";
         $sql .= "(";
-        $sql .= "'".$cliente->get('nombreCompleto')."',";
-        $sql .= "'".$cliente->get('tipoDocumento')."',";
-        $sql .= "'".$cliente->get('numeroDocumento')."',";
-        $sql .= "'".$cliente->get('email')."',";
-        $sql .= "'".$cliente->get('telefono')."'";
+        $sql .= "'" . $cliente->get('nombreCompleto') . "',";
+        $sql .= "'" . $cliente->get('tipoDocumento') . "',";
+        $sql .= "'" . $cliente->get('numeroDocumento') . "',";
+        $sql .= "'" . $cliente->get('email') . "',";
+        $sql .= "'" . $cliente->get('telefono') . "'";
         $sql .= ")";
         $dataBase = new DataBaseController();
-        $result = $dataBase->ejecutarSql($sql);
+        $result = $dataBase->execSql($sql);
         $dataBase->close();
         return $result;
     }
 
-     public function update($cliente)
+    public function update($cliente)
     {
         $sql = "UPDATE clientes SET";
         $sql .= "nombreCompleto='" . $cliente->get('nombreCompleto') . "',";
@@ -59,12 +58,12 @@ class ClienteController
         $sql .= "WHERE id = " . $cliente->get('id');
 
         $dataBase = new DataBaseController();
-        $result = $dataBase->ejecutarSql($sql);
+        $result = $dataBase->execSql($sql);
         $dataBase->close();
-        
+
         return $result;
     }
-     public function clienteExistente($numeroDocumento)
+    public function clienteExistente($numeroDocumento)
     {
         $dataBase = new DataBaseController();
         $conn = $dataBase->getConnection();
@@ -73,15 +72,16 @@ class ClienteController
         $query->execute();
         $result = $query->get_result();
         $row = $result->fetch_assoc();
-        return $row['count'] > 0;  
+        return $row['count'] > 0;
     }
 
-    function idCliente($documento){
+    function idCliente($documento)
+    {
         $dataBase = new DataBaseController();
-        $sql = "SELECT * FROM clientes WHERE numeroDocumento='".$documento."'";
-        $result = $dataBase->ejecutarSql($sql);
+        $sql = "SELECT * FROM clientes WHERE numeroDocumento='" . $documento . "'";
+        $result = $dataBase->execSql($sql);
         $clientes = [];
-        if($result->num_rows == 0){
+        if ($result->num_rows == 0) {
             return $clientes;
         }
         while ($item = $result->fetch_assoc()) {
@@ -90,11 +90,10 @@ class ClienteController
             $cliente->set('id', $item['id']);
             array_push($clientes, $cliente);
 
-            $id=$cliente->get('id');
-            setcookie('clienteId',$id, time() + (86400 * 30), "/");
+            $id = $cliente->get('id');
+            setcookie('clienteId', $id, time() + (86400 * 30), "/");
         }
         $dataBase->close();
         return $clientes;
     }
 }
-?>

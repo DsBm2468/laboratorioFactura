@@ -18,8 +18,9 @@
                   <label for="">Contraseña: </label>
                   <input type="password" name="pwd" required>
              </div>
-             <button type=submit>Iniciar sesión</button>
+             <input class="enviar" type="submit" value="Iniciar sesion">
             </form> 
         </tbody>
     </body>
+    <button type=submit>Iniciar sesión</button>
 </html>

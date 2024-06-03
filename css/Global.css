@@ -1,3 +1,30 @@
+/* Prueba(No funciona con los formularios ni tablas*/
+.contenido{
+    display: flex;
+    margin: 60px;
+}
+.articulos{
+    width: 80%;
+    border-right: 3px solid black;
+}
+.secciones{
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+.menu-secundario{
+    width: 20%;
+    margin-top: 60px;
+}
+.menu-secundario a{
+    display: block;
+    text-align: center;
+
+    color: black;
+    margin-bottom: 20px;
+}
+
 /* Maquetación XD */
 
 * {
@@ -78,6 +105,7 @@ footer {
 
 .texto1 {
     text-align: center;
+    padding: 20px;
 }
 
 /* tabla */

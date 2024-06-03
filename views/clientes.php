@@ -76,7 +76,7 @@ $clientes = $controller->read();
         </table>
     </div>
     <br>
-    <a href="cerrarSesion.php" class="">Cerrar Sesión</a>
+    <a href="formulariocliente.php" class="nav-link1">Agregar Nuevo Cliente</a>
     <br>
 </body>
 

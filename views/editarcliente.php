@@ -11,7 +11,7 @@ $dataBase = new DataBaseController();
 
 $id = $_GET['id'];
 $query = "SELECT * FROM clientes WHERE id = $id";
-$result = $dataBase->ejecutarSql($query);
+$result = $dataBase->execSql($query);
 $record = $result->fetch_assoc();
 echo "ID recibido del formulario: " . $_GET['id'];
 ?>
